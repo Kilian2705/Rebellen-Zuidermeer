@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rebellen Zuidermeer</title>
+    <link rel="stylesheet" type="text/css" href="sass/page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="navContainer">
+        <div id="navWrapper" class="l-page-width">
+            <a href="index.html">
+                <img id="navLogo" src="assets/logo.png" alt="Ga naar Home pagina">
+            </a>
+            <div id="navItemsContainer">
+                <a class="u-toggle-size-nav__big-item" href="index.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Home</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="programma.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Programma</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="over.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Over ons</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="inschrijven.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Inschrijven</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+
+                <a class="u-toggle-size-nav__small-item" href="index.html">HOME</a>
+                <a class="u-toggle-size-nav__small-item" href="programma.html">PROGRAMMA</a>
+                <a class="u-toggle-size-nav__small-item" href="over.html">OVER ONS</a>
+                <a class="u-toggle-size-nav__small-item" href="inschrijven.html">INSCHRIJVEN</a>
+            </div>
+            <div id="menuBtn">
+                <p>MENU</p>
+                <div id="hamburgerBars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-page-flex l-full-page-height l-centered-page">
+        <div class="l-page-width l-centered-page u-16px-gap is-loading" id="fullProgramPage">
+            <div class="loader"></div>
+
+            <h1 class="u-page-title-btm-margin" id="programma-titel">Programma</h1>
+
+
+            <!-- Container waar de programma-items dynamisch worden toegevoegd -->
+            <div class="l-page-width l-centered-page u-16px-gap" id="programItemsContainer">
+<!--                <div class="l-flex-row-100 c-program-small-card">-->
+<!--                    <div class="c-program-date-card">-->
+<!--                        <h2>06</h2>-->
+<!--                        <p>Sep</p>-->
+<!--                    </div>-->
+<!--                    <div class="c-program-info-card">-->
+<!--                        <p>Openingsavond</p>-->
+<!--                        <p>19:30 - 22:30</p>-->
+<!--                        <div class="l-location__link">-->
+<!--                            <img src="assets/location_icon.png" alt="locatie">-->
+<!--                            <p>‘t Rebellen Honk</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
+
+    <div id="footerContainer">
+        <div class="l-page-width" id="footerTop">
+            <img src="assets/logo.png" alt="">
+            <div class="l-footer-text-layout l-flex-row-100">
+                <div class="footer_text">
+                    <p class="u-bolder-text">Adres</p>
+                    <p>Overtoom 59, 1652 CN, Zuidermeer</p>
+                </div>
+                <div class="footer_text">
+                    <p class="u-bolder-text">Contact</p>
+                    <p>rebellenzuidermeer@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div id="footerBottom">
+            <p>©2024 | guijtkilian@gmail.com | Alle rechten voorbehouden</p>
+        </div>
+    </div>
+
+    <script>
+        // Functie om een datum in het formaat DD-MM-YYYY om te zetten naar een JavaScript Date object
+        function parseDate(dateString) {
+            var parts = dateString.split('-');
+            return new Date(parts[2], parts[1] - 1, parts[0]); // Jaar, maand (0-gebaseerd), dag
+        }
+
+        // Functie om gegevens op te halen van get_programma.php
+        function fetchEventData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'get_programma.php', true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    var response = JSON.parse(xhr.responseText);
+                    var data = response.data;
+
+                    // Sorteer de data op datum in oplopende volgorde
+                    data.sort(function(a, b) {
+                        var dateA = parseDate(a[1]);
+                        var dateB = parseDate(b[1]);
+                        return dateA - dateB; // Sorteert van vroeg naar laat
+                    });
+
+                    // Huidige datum verkrijgen
+                    var currentDate = new Date();
+                    currentDate.setHours(0, 0, 0, 0); // Stel de tijd in op 00:00 om alleen de datum te vergelijken
+
+                    // Container voor de programma-items
+                    var programItemsContainer = document.getElementById('programItemsContainer');
+                    programItemsContainer.innerHTML = ''; // Maak de container leeg
+
+                    // Toon maximaal 3 verschillende programma-items
+                    var count = 0;
+
+                    // Beperk de loop tot maximaal 100 items of het aantal beschikbare data-rijen, welke kleiner is
+                    for (var i = 0; i < Math.min(data.length, 100) && count < 3; i++) {
+                        var row = data[i];
+                        var eventDate = parseDate(row[1]);
+
+                        // Check of de datum geldig is en in de toekomst of vandaag valt
+                        if (!isNaN(eventDate) && eventDate >= currentDate) {
+                            eventDate.setHours(0, 0, 0, 0); // Stel de tijd in op 00:00 om alleen de datum te vergelijken
+
+                            // Controleer en vervang een enkele "t " en "T " in Activiteit (kolom 0) en Locatie-naam (kolom 3)
+                            var activiteit = row[0].trim();
+                            var locatieNaam = row[3].trim();
+
+                            if (activiteit.startsWith("t ")) {
+                                activiteit = "'t " + activiteit.substring(2);
+                            } else if (activiteit.startsWith("T ")) {
+                                activiteit = "'T " + activiteit.substring(2);
+                            }
+
+                            if (locatieNaam.startsWith("t ")) {
+                                locatieNaam = "'t " + locatieNaam.substring(2);
+                            } else if (locatieNaam.startsWith("T ")) {
+                                locatieNaam = "'T " + locatieNaam.substring(2);
+                            }
+
+                            if (activiteit.length > 32) {
+                                activiteit = activiteit.substring(0, 32) + "...";
+                            }
+                            if (locatieNaam.length > 32) {
+                                locatieNaam = locatieNaam.substring(0, 32) + "...";
+                            }
+
+                            // HTML-structuur voor een programma-item
+                            var programItemHTML = `
+                        <div class="l-flex-row-100 c-program-small-card">
+                            <div class="c-program-date-card">
+                                <h2>${String(eventDate.getDate()).padStart(2, '0')}</h2>
+                                <p>${['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'][eventDate.getMonth()]}</p>
+                            </div>
+                            <div class="c-program-info-card">
+                                <p>${activiteit}</p>
+                                <p>${row[2]}</p>
+                                <div class="l-location__link">
+                                    <img src="assets/location_icon.png" alt="locatie">
+                                    <p><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(row[4])}" target="_blank">${locatieNaam}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                            programItemsContainer.insertAdjacentHTML('beforeend', programItemHTML);
+                            count++; // Verhoog de teller
+                        }
+                    }
+
+                    document.getElementById("fullProgramPage").classList.remove("is-loading");
+
+                    // Controleer of er geen items zijn toegevoegd
+                    if (count === 0) {
+                        document.getElementById('programma-titel').classList.add('is-hidden')
+                        programItemsContainer.innerHTML = '<p>Er staan momenteel geen activiteiten op het programma.</p><p>Probeer het later opnieuw of schrijf je in voor de nieuwsbrief.</p><a href="inschrijven.html"><div class="c-button c-button--high u-extra-section-spacing"><p>Inschrijven</p></div></a>';
+                    }
+
+
+                } else {
+                    console.error('Error fetching data from get_programma.php');
+                }
+            };
+
+            xhr.onerror = function() {
+                console.error('Request failed');
+            };
+
+            xhr.send();
+        }
+
+        // Laad de gegevens wanneer de pagina wordt geladen
+        window.onload = function() {
+            fetchEventData();
+        };
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

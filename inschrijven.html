@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rebellen Zuidermeer</title>
+    <link rel="stylesheet" type="text/css" href="sass/page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="navContainer">
+        <div id="navWrapper" class="l-page-width">
+            <a href="index.html">
+                <img id="navLogo" src="assets/logo.png" alt="Ga naar Home pagina">
+            </a>
+            <div id="navItemsContainer">
+                <a class="u-toggle-size-nav__big-item" href="index.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Home</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="programma.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Programma</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="over.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Over Ons</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="inschrijven.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Inschrijven</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+
+                <a class="u-toggle-size-nav__small-item" href="index.html">HOME</a>
+                <a class="u-toggle-size-nav__small-item" href="programma.html">PROGRAMMA</a>
+                <a class="u-toggle-size-nav__small-item" href="over.html">OVER ONS</a>
+                <a class="u-toggle-size-nav__small-item" href="inschrijven.html">INSCHRIJVEN</a>
+            </div>
+            <div id="menuBtn">
+                <p>MENU</p>
+                <div id="hamburgerBars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-page-flex l-centered-page">
+        <div class="l-page-width l-centered-page js-show-on-submit">
+            <h2>De inschrijving is ontvangen</h2>
+            <p>Je ontvangt een bevestiging per e-mail.</p>
+
+            <a href="inschrijven.html" class="u-paragraph-margin--header c-button c-button--high">
+                <p>Nog een inschrijving</p>
+            </a>
+        </div>
+
+        <div class="l-page-width l-centered-page js-hide-on-submit">
+            <h1>Inschrijven</h1>
+            <p>Schrijf je in voor de rebellenclub</p>
+            <a href="over.html#inschrijvingen"><p class="p--secondary u-paragraph-margin--secondary">Meer informatie</p></a>
+        </div>
+        <div class="l-page-width l-centered-page c-form-container js-hide-on-submit">
+            <form id="registration-form">
+                <fieldset>
+                    <h2>Gegevens kind</h2>
+                    <p class="c-form__label">Naam</p>
+                    <input type="text" autocomplete="off" id="childName" class="js-form-validation js-form-validation__name" name="naam-kind" placeholder="Voornaam Achternaam" required>
+
+                    <p class="c-form__label">Mobiel (optioneel)</p>
+                    <input autocomplete="off" class="js-form-validation js-form-validation__phone" type="tel" id="childPhone" name="telefoon-kind" placeholder="06 1234567">
+
+                    <p class="c-form__caption">Dit is voor de WhatsApp-groep.</p>
+
+                    <p class="c-form__label">Geboortedatum</p>
+                    <input autocomplete="off" class="js-form-validation js-form-validation__birth is-empty" type="date" id="birthdate" name="geb-datum-kind" placeholder="dag/maand/jaar" required>
+                </fieldset>
+
+                <fieldset>
+                    <h2>Gegevens ouder/voogd</h2>
+                    <p class="c-form__label">Naam</p>
+                    <input type="text" class="js-form-validation js-form-validation__name" id="parentName" name="name" autocomplete="name" placeholder="Voornaam Achternaam" required>
+
+                    <p class="c-form__label">Mobiel</p>
+                    <input type="tel" class="js-form-validation js-form-validation__phone" id="parentPhone" name="phone" autocomplete="tel" placeholder="06 1234567" required>
+
+                    <p class="c-form__label">E-mail</p>
+                    <input class="js-form-validation js-form-validation__email" type="email" id="parentEmail" name="email" autocomplete="email" placeholder="naam@domein.com" required>
+
+                    <p class="c-form__label">Adres</p>
+                    <div id="address-autocomplete-container">
+                        <div id="dropdown-carrot"><span></span></div>
+                        <input class="js-form-validation js-form-validation__address" name="address" required id="address-autocomplete-input" type="text" placeholder="Straatnaam 1" autocomplete="address-line1">
+                        <ul class="c-form-dropdown-menu"></ul>
+                    </div>
+                    <p class="c-form__label">Postcode</p>
+                    <input id="autofillPostal" class="js-form-validation js-form-validation__postal" name="postal" type="text" placeholder="1234 AA" autocomplete="postal-code" required>
+                    <p class="c-form__label">Plaats</p>
+                    <input id="autofillCity" class="js-form-validation js-form-validation__city" required name="city" autocomplete="address-level2" type="text" placeholder="Zuidermeer">
+                </fieldset>
+
+                <fieldset>
+                    <label class="u-form-consent-card">
+                        <input class="js-consent--optional" id="photo-check" required type="checkbox" name="checkbox" />
+                        Ik geef toestemming voor het fotograferen van mijn kind voor gebruik in het honk en dorpsblad. (Optioneel)
+                    </label>
+                    <label class="u-form-consent-card">
+                        <input class="js-consent--optional" id="newsletter-check" type="checkbox" name="checkbox" />
+                        Ik ontvang graag de nieuwsbrief voor informatie over aankomende activiteiten. (Optioneel)
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <div class="c-button c-button--high" id="submit-btn"><p>Verstuur</p></div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <div id="footerContainer">
+        <div class="l-page-width" id="footerTop">
+            <img src="assets/logo.png" alt="">
+            <div class="l-footer-text-layout l-flex-row-100">
+                <div class="footer_text">
+                    <p class="u-bolder-text">Adres</p>
+                    <p>Overtoom 59, 1652 CN, Zuidermeer</p>
+                </div>
+                <div class="footer_text">
+                    <p class="u-bolder-text">Contact</p>
+                    <p>rebellenzuidermeer@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div id="footerBottom">
+            <p>©2024 | guijtkilian@gmail.com | Alle rechten voorbehouden</p>
+        </div>
+    </div>
+
+<script>
+    // Verander de kleur van de datepicker wanneer deze leeg is
+    const el = document.getElementById('birthdate');
+    el.onchange = function() {
+        if (el.value === '') {
+            el.classList.add("is-empty");
+        } else {
+            el.classList.remove("is-empty");
+        }
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropdownMenu = document.querySelector(".c-form-dropdown-menu");
+        const autocompleteContainer = document.getElementById("address-autocomplete-container");
+        const inputElement = document.getElementById("address-autocomplete-input");
+        const postalCodeElement = document.getElementById("autofillPostal");
+        const cityElement = document.getElementById("autofillCity");
+        const dropdownCarrot = document.getElementById("dropdown-carrot");
+        let currentPromiseReject;
+        let focusedItemIndex;
+        let autocompleteEnabled = true;
+        let itemArray = [];
+
+
+        function closeDropDownList() {
+            // remove active classes
+            autocompleteContainer.classList.remove("is-active");
+
+            //remove all list items
+            if (dropdownMenu) {
+                itemArray = [];
+                while (dropdownMenu.firstChild) {
+                    dropdownMenu.removeChild(dropdownMenu.firstChild);
+                }
+            }
+        }
+
+
+        // Open dropdown menu when typing in input field
+        inputElement.addEventListener("input", function () {
+            autocomplete(this.value);
+        });
+
+
+        document.addEventListener("click", function(e) {
+            // Close dropdown menu and rotate carrot when clicking outside of input field
+            if (e.target !== inputElement && autocompleteContainer.classList.contains("is-active")) {
+                closeDropDownList();
+                dropdownCarrot.classList.add("is-toggled");
+            }
+            // Open dropdown menu when clicking on input field if dropdown menu is not already active
+            else if (e.target === inputElement && !autocompleteContainer.classList.contains("is-active")) {
+                autocomplete(inputElement.value);
+            }
+        });
+
+
+        // Handle carrot button clicks
+        dropdownCarrot.addEventListener("click", function() {
+            // if dropdown menu is closed and carrot is toggled, open dropdown menu and un-toggle carrot
+            if (!autocompleteContainer.classList.contains("is-active") && dropdownCarrot.classList.contains("is-toggled")) {
+                autocomplete(inputElement.value);
+                dropdownCarrot.classList.remove("is-toggled");
+                autocompleteEnabled = true;
+            }
+            // if dropdown menu is already open and carrot is not toggled, close dropdown menu and toggle carrot until pressed again
+            if (autocompleteContainer.classList.contains("is-active") && !dropdownCarrot.classList.contains("is-toggled")) {
+                closeDropDownList();
+                dropdownCarrot.classList.add("is-toggled");
+                autocompleteEnabled = false;
+            }
+        });
+
+
+        function autocomplete(input) {
+            // Get the value of the input field
+            let currentValue = input;
+
+            // Close the dropdown list everytime something is typed
+            closeDropDownList();
+
+            // Open dropdown list if value is entered
+            if (currentValue.length < 4) {
+                autocompleteContainer.classList.remove("is-active");
+                dropdownCarrot.classList.remove("is-active");
+                inputElement.setAttribute("autocomplete", "address-line1");
+                inputElement.setAttribute("name", "address");
+                return;
+            } else {
+                inputElement.setAttribute("autocomplete", "nope");
+                inputElement.setAttribute("name", "field");
+                // Prepare focused item index for keyboard navigation
+                focusedItemIndex = -1;
+            }
+
+            // Cancel previous request promise
+            if (currentPromiseReject) {
+                currentPromiseReject({
+                    canceled: true
+                });
+            }
+
+            // Create a new promise and send geocoding request
+            let promise = new Promise((resolve, reject) => {
+                currentPromiseReject = reject;
+
+                let apiKey = "f8a8883ea72a46829d5d61d46d34adbc";
+                let url = `https://api.geoapify.com/v1/geocode/autocomplete?text=${encodeURIComponent(currentValue)}&limit=5&bias=proximity:52.6645959,4.9730187&filter=countrycode:nl&apiKey=${apiKey}`;
+
+                fetch(url)
+                    .then(response => {
+                        // check if the call was successful
+                        if (response.ok) {
+                            response.json().then(data => resolve(data));
+                        } else {
+                            response.json().then(data => reject(data));
+                        }
+                    });
+            });
+
+            promise.then((data) => {
+                // Check if data.features exists and is an array
+                if (data.features && data.features.length > 0) {
+                    data.features.forEach((feature) => {
+                        let formattedAddress;
+
+                        // Check if all required fields are present
+                        if (feature.properties.city && feature.properties.postcode && feature.properties.street) {
+                            formattedAddress = `${feature.properties.street}${feature.properties.housenumber ? ` ${feature.properties.housenumber}` : ''}, ${feature.properties.postcode}, ${feature.properties.city}`;
+                        } else {
+                            return;
+                        }
+
+                        // Add items to array
+                        itemArray.push(formattedAddress);
+
+                        // If autocomplete is enabled, show the dropdown menu
+                        if (autocompleteEnabled) {
+                            autocompleteContainer.classList.add("is-active");
+                        }
+                    });
+                }
+
+                // Check if there are items in the array
+                if (itemArray.length > 0) {
+                    // Show carrot btn if items exist in dropdown menu
+                    dropdownCarrot.classList.add("is-active");
+
+                    // Only remove toggled if autocomplete is enabled
+                    if (autocompleteEnabled) {
+                        dropdownCarrot.classList.remove("is-toggled");
+                    }
+
+                    // Add each item to the dropdown menu if active
+                    if (autocompleteContainer.classList.contains("is-active")) {
+                        itemArray.forEach(function (item) {
+                            // Create a list item for the formatted address in array
+                            let itemElement = document.createElement("li");
+                            // Set formatted address as list item content
+                            itemElement.innerHTML = item;
+                            // Add list item to the dropdown menu list
+                            dropdownMenu.appendChild(itemElement)
+                        });
+                    }
+                } else {
+                    // Hide carrot btn if no items exist in dropdown menu
+                    dropdownCarrot.classList.remove("is-active");
+                }
+            }, (err) => {
+                if (!err.canceled) {
+                }
+            });
+        }
+
+
+        // Function to handle focus of an item from the dropdown menu
+        function setFocus(items, index) {
+            // Check if there are items in the dropdown menu
+            if (!items || !items.length) return false;
+
+            // Remove all active classes from the items
+            for (let i = 0; i < items.length; i++) {
+                items[i].classList.remove("is-focused");
+            }
+
+            // Add class to the active element
+            items[index].classList.add("is-focused");
+        }
+
+
+        // Function to handle selection of an item from the dropdown menu
+        function selectItem(item) {
+            // Split the address into parts if possible
+            let addressParts = item ? item.split(", ") : [];
+
+            // If all address parts exist, set the values of the input fields to the selected items
+            if (addressParts.length === 3) {
+                inputElement.value = addressParts[0];
+                postalCodeElement.value = addressParts[1];
+                cityElement.value = addressParts[2];
+            }
+        }
+
+
+        // Add keyboard navigation support
+        inputElement.addEventListener("keydown", function(e) {
+            // If there are suggestion items in menu
+            if (dropdownMenu) {
+                let items = dropdownMenu.getElementsByTagName("li");
+
+                // Prevent default behaviour of arrow and enter keys
+                if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Enter') e.preventDefault();
+
+                // Change focused item when pressing arrow keys
+                if (e.key === "ArrowDown") {
+                    focusedItemIndex = focusedItemIndex + 1 < items.length ? focusedItemIndex + 1 : focusedItemIndex = 0;
+                    setFocus(items, focusedItemIndex);
+                } else if (e.key === "ArrowUp") {
+                    focusedItemIndex = focusedItemIndex > 0 ? focusedItemIndex - 1 : focusedItemIndex = (items.length - 1);
+                    setFocus(items, focusedItemIndex);
+                } else if (e.key === "Enter") {
+                    selectItem(items[focusedItemIndex].textContent);
+                    closeDropDownList();
+                    dropdownCarrot.classList.add("is-toggled");
+                }
+            }
+        });
+
+        // Handle click events on dropdown menu items
+        dropdownMenu.addEventListener("click", function(e) {
+            if (e.target.tagName === 'LI') {
+                selectItem(e.target.textContent);
+                closeDropDownList();
+                dropdownCarrot.classList.add("is-toggled");
+            }
+        });
+
+
+        // Live input validation
+        const inputs = document.querySelectorAll(".js-form-validation");
+        const submitButton = document.getElementById("submit-btn");
+        const hideOnSubmit = document.querySelectorAll(".js-hide-on-submit");
+        const showOnSubmit = document.querySelector(".js-show-on-submit");
+
+        let formattedPostal;
+        let allValid = false;
+
+        function getInputType(input) { // Give types to all input fields
+            if (input.classList.contains("js-form-validation__name")) return 'name';
+            if (input.classList.contains("js-form-validation__phone")) return 'phone';
+            if (input.classList.contains("js-form-validation__email")) return 'email';
+            if (input.classList.contains("js-form-validation__postal")) return 'postal';
+            if (input.classList.contains("js-form-validation__address")) return 'address';
+            if (input.classList.contains("js-form-validation__birth")) return 'birth';
+            if (input.classList.contains("js-form-validation__city")) return 'city';
+            return ''; // Return an empty string if no matching class is found
+        }
+
+        const validationMessages = { // Set error messages for input field types
+            name: "Vul tenminste een voornaam en achternaam in zoals 'Jan Jansen'",
+            phone: "Vul een geldig Nederlands telefoonnummer in zoals '06 12345678'",
+            email: "Vul een geldig e-mailadres in zoals 'naam@domein.com'",
+            address: "Vul een straatnaam en huisnummer in zoals 'Straatnaam 123'",
+            postal: "Vul een geldige postcode in zoals '1234 AA'",
+            city: "Vul een geldige plaats in zoals 'Zuidermeer'",
+            birth: "Vul een geldige geboortedatum in zoals '31-12-2010'"
+        };
+        const validationClasses = { // Set severity of errors for input field types
+            name: "u-validation-alert--hard",
+            phone: "u-validation-alert--hard",
+            email: "u-validation-alert--hard",
+            address: "u-validation-alert--hard",
+            postal: "u-validation-alert--hard",
+            city: "u-validation-alert--hard",
+            birth: "u-validation-alert--hard"
+        };
+
+        function createValidationMessage(input, message, type) { // Create the message that pops up below input field
+            let targetElement = input;
+
+            if (type === 'address') { // Address input field should select the parent element because it's in a container div
+                targetElement = input.parentElement;
+            }
+
+            // Check if no validation message is already present by
+            // First checking if the input field has a sibling element
+            // Then checking if the sibling element is not the validation message
+            // This works because the next sibling element would be the title of the next input field which would never have the error class
+            if (!targetElement.nextElementSibling || !targetElement.nextElementSibling.classList.contains(validationClasses[type])) {
+                // Create validation message with class and insert it below the input field
+                const newValidationAlert = document.createElement("p");
+                newValidationAlert.classList.add(validationClasses[type]);
+                newValidationAlert.textContent = message;
+
+                targetElement.insertAdjacentElement("afterend", newValidationAlert);
+            }
+        }
+
+        // Function to validate input fields
+        function validateInput(input, type) {
+            let isValid;
+
+            if (input.value.trim() === '') {
+                return true; // Treat empty input as valid
+            }
+
+            switch (type) {
+                case 'name':
+                    // At least two letters with a space, no numbers or special characters
+                    isValid = input.value.trim().split(/\s+/).length >= 2 && /^[A-Za-z\s]+$/.test(input.value);
+                    break;
+                case 'phone':
+                    // Remove all spaces
+                    const cleanedPhoneValue = input.value.replace(/\s+/g, '');
+
+                    // Must start with 06, +316, 00316, 003106, or +3106 followed by exactly 8 digits
+                    const phonePattern = /^(06|\+316|00316|003106|\+3106)\d{8}$/;
+
+                    const phoneMatch = cleanedPhoneValue.match(phonePattern);
+                    isValid = !!phoneMatch;
+                    break;
+                case 'email':
+                    // Standard email format
+                    // [non-whitespace characters]@[non-whitespace characters].[non-whitespace characters]
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    isValid = emailPattern.test(input.value.trim());
+                    break;
+                case 'postal':
+                    // Remove all spaces
+                    const cleanedPostalValue = input.value.replace(/\s+/g, '');
+
+                    // Requires 4 digits followed by 2 letters
+                    const postalPattern = /^(\d{4})([a-zA-Z]{2})$/;
+
+                    const postalMatch = cleanedPostalValue.match(postalPattern);
+                    if (postalMatch) {
+                        // Add a single space between the digits and the letters and capitalize the letters for later use
+                        formattedPostal = `${postalMatch[1]} ${postalMatch[2].toUpperCase()}`
+                        isValid = true;
+                    } else {
+                        // Return null if the format is incorrect
+                        isValid = false;
+                    }
+                    break;
+                case 'address':
+                    // At least one letter, one digit, and one space
+                    const addressPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*\s).+$/;
+                    isValid = addressPattern.test(input.value.trim());
+                    break;
+                case 'birth':
+                    isValid = true;
+                    break;
+                case 'city':
+                    // At least 2 letters
+                    const cityPattern = /[a-zA-Z].*[a-zA-Z]/;
+                    isValid = cityPattern.test(input.value.trim());
+                    break;
+                default:
+                    isValid = false;
+                    break;
+            }
+            return isValid;
+        }
+
+        // Formatting phone numbers
+        function formatPhoneNumber(phoneNumber) {
+            if (!phoneNumber) return ''; // Return empty string if no phone number
+
+            // Remove all spaces
+            let formattedPhone = phoneNumber.replace(/\s+/g, '');
+
+            // Replace any prefixes with "06"
+            formattedPhone = formattedPhone.replace(/^(06|\+316|\+3106|00316|003106)/, '06');
+
+            // Add space behind 06
+            formattedPhone = formattedPhone.replace(/^06/, '06 ');
+
+            return formattedPhone;
+        }
+
+        // Submit form
+        submitButton.addEventListener("click", function () {
+            allValid = true; // Assume all inputs are valid to start
+
+            inputs.forEach(input => {
+                const type = getInputType(input); // Check for inputs with a specific type
+
+                if (input.required) {
+                    // For any empty required fields, add a light alert
+                    if (input.value.trim() === "") {
+                        input.classList.add("u-validation-alert--light")
+                        allValid = false;
+                    } else if (!validateInput(input, type)) { // Run validation on all required inputs
+                        input.classList.add(validationClasses[type]);
+                        createValidationMessage(input, validationMessages[type], type);
+                        allValid = false;
+                    }
+                }
+            });
+
+            if (!allValid) { // Scroll to the first item that's invalid
+                // Select first item
+                let item = document.querySelector('.u-validation-alert--hard, .u-validation-alert--light');
+
+                const yOffset = -50;
+                let y = item.getBoundingClientRect().top + window.scrollY + yOffset;
+                window.scrollTo({top: y, behavior: 'smooth'});
+            } else { // IF ALL VALID ON SUBMIT
+                hideOnSubmit.forEach(e => {
+                    e.classList.add("is-submitted");
+                });
+
+                window.scrollTo({top: 0, behavior: 'smooth'});
+
+                // Wait for opacity transition to finish before removing the display of the form
+                setTimeout(function () {
+                    hideOnSubmit.forEach(e => {
+                        e.style.display = "none";
+                    });
+                    showOnSubmit.classList.add("is-submitted");
+                }, 600);
+
+
+                // Set full page height now that the form is hidden
+                const pageContent = document.querySelector(".l-page-flex");
+                pageContent.classList.add("l-full-page-height")
+
+
+                // Get full address
+                const formattedAddress = `${inputElement.value.trim()}, ${formattedPostal.trim()}, ${cityElement.value.trim()}`;
+
+                let formData = {
+                    childName: document.getElementById("childName").value.trim(),
+                    childPhone: formatPhoneNumber(document.getElementById("childPhone").value),
+                    childBirth: document.getElementById("birthdate").value,
+                    parentName: document.getElementById("parentName").value.trim(),
+                    parentPhone: formatPhoneNumber(document.getElementById("parentPhone").value),
+                    parentEmail: document.getElementById("parentEmail").value,
+                    address: formattedAddress,
+                    newsletters: document.getElementById("newsletter-check").checked,
+                    photos: document.getElementById("photo-check").checked
+                };
+
+                formData = JSON.stringify(formData);
+
+                fetch('https://script.google.com/macros/s/AKfycbxx8H-woyKZBBsVvRokLYBs_Auo1_RyJgMqMUWU17VcidPi9T97CTDlaJo7shAOcmuV/exec', { // Vervang <YOUR_WEB_APP_URL> met je Google Apps Script web app URL
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                })
+            }
+        });
+
+        // Voorkom het verzenden van het formulier bij het indrukken van de Enter-toets
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('keydown', function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();  // Voorkom het verzenden van het formulier bij Enter
+                }
+            });
+        });
+
+        // Event listeners for validation
+        inputs.forEach(input => {
+            const type = getInputType(input);
+
+            // When clicked outside of input field
+            input.addEventListener("blur", function () {
+                if (!validateInput(this, type)) {
+                    // When invalid, add the validation class and create the validation message
+                    input.classList.add(validationClasses[type]);
+                    createValidationMessage(input, validationMessages[type], type);
+                }
+            });
+
+            // On every input in the input field
+            input.addEventListener("input", function () {
+                // If it contained a light validation alert, remove it
+                // Works as long as light validation alerts are only added when the input is empty
+                if (this.classList.contains("u-validation-alert--light")) {
+                    this.classList.remove("u-validation-alert--light");
+                }
+
+                // As soon as input matched requirements, remove validation class and message
+                if (validateInput(this, type)) {
+                    this.classList.remove(validationClasses[type]);
+
+                    const alertMessage = (type === 'address')
+                        ? this.parentElement.nextElementSibling // Get the validation message after the parent
+                        : this.nextElementSibling; // Get the validation message directly
+
+                    if (alertMessage && alertMessage.classList.contains(validationClasses[type])) {
+                        alertMessage.remove();
+                    }
+                }
+            });
+        });
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,837 @@
+@use 'nav';
+@use 'footer';
+@use "sass:math";
+@import 'utilities/variables';
+
+@import "../assets/fonts/NeueAachenPro/NeueAachenPro.css";
+//@import "../assets/fonts/TradeGothicNextLTPro-Rg/TradeGothicNextLTPro-Rg.css";
+
+@font-face {
+  font-family: TradeGothicNextLTPro-Rg;
+  src: url("../assets/fonts/TradeGothicNextLTPRO-Rg/2d9ea6f12cd1eb00accda1a09c7be7ff.woff");
+}
+
+@font-face {
+  font-family: TradeGothicNextLTPro-Hv;
+  src: url("../assets/fonts/TradeGothicNextLTPro-Hv.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+a {
+  color: $links-color;
+}
+
+/*    Tekst sizing     */
+
+p {
+  font-family: "TradeGothicNextLTPro-Rg";
+  font-weight: 400;
+  font-size: 24px;
+
+  @include for-phone-only {
+    font-size: 17px;
+  }
+}
+
+.p--secondary {
+  font-size: 21px;
+
+  @include for-phone-only {
+    font-size: 15px;
+  }
+}
+
+h1 {
+  font-size: 48px;
+  font-family: "Neue Aachen Pro", sans-serif;
+
+  @include for-phone-only {
+    font-size: 32px;
+  }
+}
+
+h2 {
+  font-size: 30px;
+
+  @include for-phone-only {
+    font-size: 24px;
+  }
+}
+
+h3 {
+    font-size: 26px;
+    letter-spacing: 0.7px;
+
+    @include for-phone-only {
+        font-size: 20px;
+    }
+}
+
+
+/*    Algemene pagina layouts     */
+
+.l-full-page-height {
+  @include for-phone-only {
+    //         Page height - nav  - footer - topmargin - bottommargin
+    min-height: calc(100vh - 44px - 124px  - 40px      - 80px);
+  }
+
+  @include for-tablet-portrait-up {
+    //         Page height - nav  - footer - topmargin - bottommargin
+    min-height: calc(100vh - 65px - 228px  - 80px      - 120px);
+  }
+
+  @include for-desktop-up {
+    //         Page height - nav  - footer - topmargin - bottommargin
+    min-height: calc(100vh - 65px - 192px  - 80px      - 120px);
+  }
+}
+
+.l-page-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
+  margin-top: 80px;
+  margin-bottom: 120px;
+  position: relative;
+
+  @include for-phone-only {
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+  }
+}
+
+.l-flex-row-100 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.l-page-width {
+  width: 90vw;
+  max-width: 1200px;
+  position: relative;
+}
+
+.l-centered-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.l-flex-3-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+  }
+}
+
+.l-flex-3-cards a {
+  width: 100%;
+}
+
+
+/*    Quick utilities     */
+
+.is-hidden {
+  display: none;
+}
+
+.u-16px-gap {
+  gap: 16px !important;
+}
+
+.u-paragraph-margin--header {
+  margin: 24px 0 8px 0;
+
+  @include for-phone-only {
+    margin: 24px 0 8px 0;
+  }
+}
+
+.u-paragraph-margin--secondary {
+  margin-top: 8px;
+}
+
+.u-big-screen-only {
+  display: none;
+
+  @include for-desktop-up {
+    display: block;
+  }
+}
+
+.u-remove-on-mobile {
+  @include for-phone-only {
+    display: none;
+  }
+}
+
+.u-horizontal-center-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px; // Visually more centered
+}
+
+.u-bolder-text {
+  font-family: TradeGothicNextLTPro-Hv;
+  letter-spacing: 0.7px;
+}
+
+.u-page-title-btm-margin {
+  margin-bottom: 16px;
+
+  @include for-phone-only {
+    margin-bottom: 8px;
+  }
+}
+
+.u-extra-section-spacing {
+  margin-top: 24px;
+}
+
+
+/*    Klein tekst object     */
+
+.c-text-card-small {
+  max-width: 60vw;
+
+  p {
+    font-weight: 500;
+  }
+
+  @include for-desktop-up() {
+    max-width: 656px;
+  }
+}
+
+
+/*    Groot tekst object     */
+
+.c-text-card-big {
+  max-width: 800px;
+
+  h3 {
+    font-family: TradeGothicNextLTPro-Hv
+  }
+
+  p {
+    font-weight: 400;
+  }
+}
+
+
+/*    Absoluut gepositioneerd vector van kind     */
+
+#removeMarginSwingingChildImg {
+  margin-bottom: -80px;
+
+  @include for-phone-only {
+    margin-bottom: -40px !important;
+  }
+}
+
+#homepageSwingingChildImg {
+  position: absolute;
+  right: 0;
+  z-index: 0;
+  top: -90px;
+
+  @include for-phone-only {
+    height: 169px;
+    top: -50px;
+  }
+
+  @include for-tablet-portrait-up {
+    height: 275px;
+  }
+
+  @include for-tablet-landscape-up {
+    &.js-program-item-visible {
+      height: unset;
+      right: calc(15vw - 250px / 2);
+    }
+  }
+
+  @include for-desktop-up {
+    height: unset;
+    right: 125px !important;
+    top: -120px;
+  }
+}
+
+
+/*    programma kaarten     */
+
+.is-loading {
+  /* HTML: <div class="loader"></div> */
+  .loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid $secondary-color;
+    animation:
+            l20-1 0.8s infinite linear alternate,
+            l20-2 1.6s infinite linear;
+  }
+  @keyframes l20-1{
+    0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+    12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+    25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+    50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+    62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+    75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+    100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+  }
+  @keyframes l20-2{
+    0%    {transform:scaleY(1)  rotate(0deg)}
+    49.99%{transform:scaleY(1)  rotate(135deg)}
+    50%   {transform:scaleY(-1) rotate(0deg)}
+    100%  {transform:scaleY(-1) rotate(-135deg)}
+  }
+
+
+  h1 {
+    display: none;
+  }
+
+  #programItemsContainer {
+    display: none;
+  }
+}
+
+.c-program-small-card {
+  background-color: $sections-bg-color;
+  overflow: hidden;
+
+  @include for-phone-only {
+    max-height: 84px;
+  }
+
+  @include for-tablet-landscape-up {
+    max-width: 60vw;
+  }
+
+  @include for-desktop-up {
+    max-width: 656px;
+  }
+}
+
+.c-program-date-card {
+  width: 138px;
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  color: $text-light-color;
+
+  h2 {
+    margin-right: -1px;
+    text-align: center;
+    margin-bottom: -5px;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  p::first-letter {
+    text-transform: uppercase;
+  }
+
+  h2, p {
+    font-family: "Neue Aachen Pro", sans-serif;
+  }
+
+  @include for-phone-only {
+    height: 84px;
+    width: 84px;
+  }
+}
+
+.c-program-info-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+
+
+  p {
+    font-weight: 500;
+  }
+
+  @include for-phone-only {
+    gap: 3px;
+    padding: 8px;
+  }
+}
+
+.l-location__link {
+  display: grid;
+  grid-template-columns:  18px auto;
+  align-items: center;
+  gap: 6px;
+
+  @include for-phone-only {
+    grid-template-columns:  13px auto;
+    gap: 3px;
+  }
+
+  img {
+    aspect-ratio: 28/29;
+    height: 19px;
+
+    @include for-phone-only {
+      height: 14px;
+    }
+  }
+
+  p {
+    color: $links-color;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+
+/*    Grote navigatie items     */
+
+.c-big-nav-card {
+  background-color: $sections-bg-color;
+
+  .u-background-img {
+    height: 185px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top 35% right 0;
+
+    @include for-phone-only {
+      height: 96px;
+    }
+  }
+}
+
+.c-big-nav-info-card {
+  display: flex;
+  flex-direction: row;
+  height: 57px;
+  justify-content: space-between;
+
+  @include footer.for-phone-only {
+    height: 48px;
+  }
+
+  h2 {
+    letter-spacing: 0.5px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    font-family: 'Neue Aachen Pro', sans-serif;
+
+    color: $text-dark-color;
+  }
+}
+
+.c-big-nav-btn-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  background-color: $primary-color;
+
+  img {
+    height: 20.5px;
+    width: 18px;
+
+    @include for-phone-only {
+      height: 17px;
+      width: unset;
+    }
+  }
+}
+
+
+/*    Formulier     */
+
+.c-form-container {
+  background-color: $form-color;
+  padding: 25px 40px;
+
+  @include for-tablet-landscape-up {
+    max-width: 60vw;
+  }
+  @include for-desktop-up {
+    max-width: 656px;
+  }
+  @include for-phone-only {
+    padding: 10px 16px;
+  }
+}
+
+.js-hide-on-submit {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
+    &.is-submitted {
+        opacity: 0;
+    }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include for-phone-only {
+    gap: 24px;
+  }
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border: 0;
+
+  h2 {
+    font-family: TradeGothicNextLTPro-Hv;
+  }
+
+  .c-form__label {
+    margin-bottom: -20px;
+  }
+
+  .c-form__caption {
+    margin-top: -20px;
+    font-size: 18px;
+    color: $tertiary-text-color;
+
+    @include for-phone-only {
+      font-size: 14px;
+    }
+  }
+
+  .is-empty {
+    color: $placeholder-color;
+  }
+}
+
+input[type="date"] {
+  width: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+  background-color: $form-color !important;
+  background-clip: content-box !important;
+}
+
+input {
+  -webkit-user-select: text; /* Chrome, Opera, Safari */
+  -moz-user-select: text; /* Firefox 2+ */
+  -ms-user-select: text; /* IE 10+ */
+  user-select: text; /* Standard syntax */
+  font-size: 24px;
+  font-family: TradeGothicNextLTPro-Rg;
+  border: 1.5px solid $light-border-color;
+  border-radius: 0;
+  padding: 8px;
+  background-color: $form-color;
+
+
+  @include for-phone-only {
+    font-size: 17px;
+  }
+
+  &.u-validation-alert--hard {
+    border: 3px solid #BF4040;
+  }
+
+  &.u-validation-alert--light {
+    border: 3px solid #bf8440;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $placeholder-color;
+  }
+
+  // Houd dezelfde kleur bij automatisch invullen
+  &:-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus,
+  :-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 65px $form-color inset !important;
+  }
+}
+
+.u-form-consent-card {
+  font-family: TradeGothicNextLTPro-Rg;
+  font-size: 24px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 24px auto;
+  gap: 20px;
+  line-height: 1.1;
+  background-color: $sections-bg-color;
+  padding: 20px;
+  cursor: pointer;
+
+
+  @include for-phone-only {
+    font-size: 17px;
+    grid-template-columns: 17px auto;
+    gap: 16px;
+    padding: 16px;
+  }
+}
+
+p {
+  &.u-validation-alert--hard {
+    margin-top: -20px;
+    font-size: 18px;
+    color: #BF4040;
+
+    @include for-phone-only {
+      font-size: 14px;
+    }
+  }
+
+  &.u-validation-alert--light {
+    margin-top: -20px;
+    font-size: 18px;
+    color: #BF6640;
+
+    @include for-phone-only {
+      font-size: 14px;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: $sections-bg-color;
+  /* Not removed via appearance */
+  margin: 0;
+
+  display: grid;
+  place-content: center;
+  transition: 120ms background-color ease-in-out;
+  font: inherit;
+  color: currentColor;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: 2px solid $secondary-color;
+
+  @include for-phone-only {
+    width: 17px;
+    height: 17px;
+  }
+
+  &:checked {
+    background-color: #4451A1;
+  }
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em nav.$text-light-color;
+    clip-path: polygon(12% 50%, 5% 58%, 33% 93%, 95% 18%, 88% 10%, 33% 75%);
+
+    @include for-phone-only {
+      width: 14px;
+      height: 14px;
+      box-shadow: inset 1em 1em nav.$text-light-color;
+    }
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
+}
+
+.c-button {
+  padding: 10px 48px 12px 48px;
+  width: fit-content;
+  place-self: center;
+  cursor: pointer;
+
+
+  @include for-phone-only {
+    padding: 6px 32px 8px 32px;
+  }
+
+  &.c-button--low {
+    background-color: $bg-color;
+    color: $primary-color;
+    border: 2px solid $primary-color;
+    padding: 10px 30px 12px 30px;
+
+    @include for-phone-only {
+      padding: 6px 18px 8px 18px;
+    }
+  }
+
+  &.c-button--mid {
+    background-color: $bg-decorations-color;
+    color: $secondary-color;
+    padding: 10px 30px 12px 30px;
+
+    @include for-phone-only {
+      padding: 6px 18px 8px 18px;
+    }
+  }
+
+  &.c-button--high {
+    background-color: $primary-color;
+    color: $text-light-color;
+  }
+
+
+}
+
+#dropdown-carrot {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-border-color;
+  padding: 4px 8px 8px;
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  transform: rotate(0deg);
+
+  @include for-phone-only() {
+    width: 30px;
+  }
+
+  span {
+    background-color: $tertiary-text-color;
+    width: 16px;
+    height: 13px;
+    clip-path: polygon(49% 20%, 0% 100%, 100% 100%);
+    display: block;
+  }
+
+  &.is-active {
+    display: flex;
+  }
+
+  &.is-toggled {
+    transform: rotate(180deg);
+  }
+}
+
+#address-autocomplete-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &.is-active {
+    .c-form-dropdown-menu {
+      display: flex;
+    }
+  }
+}
+
+.c-form-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  background-color: $form-color;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1.5px solid $light-border-color;
+  border-top: none;
+
+  li {
+    padding: 8px;
+    font-size: 24px;
+    font-family: TradeGothicNextLTPro-Rg;
+    cursor: pointer;
+
+    @include for-phone-only {
+      font-size: 17px;
+    }
+
+    &:hover,
+    &.is-focused {
+      background-color: #C6CCD2;
+    }
+  }
+}
+
+.js-show-on-submit {
+  display: none;
+  opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+  &.is-submitted {
+    display: flex;
+    opacity: 1;
+  }
+
+  h2 {
+    font-family: TradeGothicNextLTPro-Hv;
+    margin-bottom: 8px;
+  }
+
+  .c-button {
+    margin-top: 40px;
+  }
+}
+
+/*    Specifieke foto elementen     */
+
+#programmaFoto {
+  background-image: url("../assets/paintball_foto.png");
+}
+
+#overonsFoto {
+  background-image: url("../assets/clubhuis_foto.webp");
+}
+
+#inschrijfFoto {
+  background-image: url("../assets/strand_foto.png");
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rebellen Zuidermeer</title>
+    <link rel="stylesheet" type="text/css" href="sass/page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="navContainer">
+        <div id="navWrapper" class="l-page-width">
+            <a href="index.html">
+                <img id="navLogo" src="assets/logo.png" alt="Ga naar Home pagina">
+            </a>
+            <div id="navItemsContainer">
+                <a class="u-toggle-size-nav__big-item" href="index.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Home</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="programma.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Programma</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="over.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Over Ons</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+                <a class="u-toggle-size-nav__big-item" href="inschrijven.html">
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Inschrijven</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </a>
+
+                <a class="u-toggle-size-nav__small-item" href="index.html">HOME</a>
+                <a class="u-toggle-size-nav__small-item" href="programma.html">PROGRAMMA</a>
+                <a class="u-toggle-size-nav__small-item" href="over.html">OVER ONS</a>
+                <a class="u-toggle-size-nav__small-item" href="inschrijven.html">INSCHRIJVEN</a>
+            </div>
+            <div id="menuBtn">
+                <p>MENU</p>
+                <div id="hamburgerBars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="l-page-flex l-full-page-height">
+        <!--Foto van kind dat schommelt aan lamp-->
+        <div class="l-page-width" id="removeMarginSwingingChildImg">
+            <img id="homepageSwingingChildImg" src="assets/rebellen_vector.png" alt="">
+        </div>
+        <!--Pagina titel en tekst-->
+        <div class="l-page-width">
+            <div class="c-text-card-small">
+                <h1><span class="u-remove-on-mobile">De</span> Rebellenclub</h1>
+                <p class="u-add-paragraph-spacing">
+                    Jeugdvereniging in Zuidermeer voor jongeren tussen 10 en 16 jaar oud. <br>
+                </p>
+                <p class="u-add-paragraph-spacing u-big-screen-only">
+                    In ons clubhuis, het ‘Rebellenhonk’, organiseren we twee keer per maand gezellige activiteiten. <br>
+                </p>
+                <p class="u-add-paragraph-spacing u-big-screen-only ">
+                    Bekijk het programma en kom een keer langs, het clubhuis bevindt zich in het gebouw van sportvereniging S.V. Zuidermeer. <br>
+                </p>
+            </div>
+        </div>
+
+        <!--Klein programma item-->
+        <div class="l-page-width is-hidden" id="programItemContainer">
+            <div class="l-flex-row-100 c-program-small-card">
+                <div class="c-program-date-card">
+                    <h2 id="event-day"></h2>
+                    <p id="event-month"></p>
+                </div>
+                <div class="c-program-info-card">
+                    <p id="event-title"></p>
+                    <p id="event-time"></p>
+                    <div class="l-location__link">
+                        <img src="assets/location_icon.png" alt="locatie">
+                        <p id="event-location"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grote navigatie kaarten -->
+        <div class="l-flex-3-cards l-page-width u-extra-section-spacing">
+            <a href="programma.html">
+                <div class="c-big-nav-card">
+                    <div class="u-background-img" id="programmaFoto"></div>
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Programma</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Programma pagina">
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="over.html">
+                <div class="c-big-nav-card">
+                    <div class="u-background-img" id="overonsFoto"></div>
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Over ons</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar Over Ons pagina">
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="inschrijven.html">
+                <div class="c-big-nav-card">
+                    <div class="u-background-img" id="inschrijfFoto"></div>
+                    <div class="c-big-nav-info-card">
+                        <div class="u-horizontal-center-text">
+                            <h2>Inschrijven</h2>
+                        </div>
+                        <div class="c-big-nav-btn-card">
+                            <img src="assets/arrow_right_bold.png" alt="Ga naar inschrijf pagina">
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div id="footerContainer">
+        <div class="l-page-width" id="footerTop">
+            <img src="assets/logo.png" alt="">
+            <div class="l-footer-text-layout l-flex-row-100">
+                <div class="footer_text">
+                    <p class="u-bolder-text">Adres</p>
+                    <p>Overtoom 59, 1652 CN, Zuidermeer</p>
+                </div>
+                <div class="footer_text">
+                    <p class="u-bolder-text">Contact</p>
+                    <p>rebellenzuidermeer@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div id="footerBottom">
+            <p>©2024 | guijtkilian@gmail.com | Alle rechten voorbehouden</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Functie om een datum in het formaat DD-MM-YYYY om te zetten naar een JavaScript Date object
+        function parseDate(dateString) {
+            var parts = dateString.split('-');
+            return new Date(parts[2], parts[1] - 1, parts[0]); // Jaar, maand (0-gebaseerd), dag
+        }
+
+        // Functie om gegevens op te halen van get_programma.php
+        function fetchEventData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'get_programma.php', true);
+            xhr.onload = function() {
+                if (xhr.status >= 200 && xhr.status < 400) {
+                    var response = JSON.parse(xhr.responseText);
+                    var data = response.data;
+
+                    // Sorteer de data op datum in oplopende volgorde
+                    data.sort(function(a, b) {
+                        var dateA = parseDate(a[1]);
+                        var dateB = parseDate(b[1]);
+                        return dateA - dateB; // Sorteert van vroeg naar laat
+                    });
+
+                    // Huidige datum verkrijgen
+                    var currentDate = new Date();
+                    currentDate.setHours(0, 0, 0, 0); // Stel de tijd in op 00:00 om alleen de datum te vergelijken
+
+                    // Loop door de data en toon alleen het eerste evenement van vandaag of toekomstige evenementen
+                    for (var i = 0; i < Math.min(data.length, 100); i++) {
+                        var row = data[i];
+                        var eventDate = parseDate(row[1]);
+
+                        if (!isNaN(eventDate)) {
+                            eventDate.setHours(0, 0, 0, 0); // Stel de tijd in op 00:00 voor de vergelijking
+
+                            if (eventDate >= currentDate) {
+                                document.getElementById('programItemContainer').classList.remove('is-hidden'); // Maak het programma-item zichtbaar
+                                document.getElementById('homepageSwingingChildImg').classList.add('js-program-item-visible');
+
+                                var activiteit = row[0].trim();
+                                var locatieNaam = row[3].trim();
+
+                                // Controleer of de activiteit begint met "t " of "T " en voeg "'t " toe
+                                if (activiteit.startsWith("t ")) {
+                                    activiteit = "'t " + activiteit.substring(2);
+                                } else if (activiteit.startsWith("T ")) {
+                                    activiteit = "'T " + activiteit.substring(2);
+                                }
+
+                                // Controleer of de locatie begint met "t " of "T " en voeg "'t " toe
+                                if (locatieNaam.startsWith("t ")) {
+                                    locatieNaam = "'t " + locatieNaam.substring(2);
+                                } else if (locatieNaam.startsWith("T ")) {
+                                    locatieNaam = "'T " + locatieNaam.substring(2);
+                                }
+
+                                // Beperk de activiteit en locatie tot 32 tekens en voeg "..." toe indien nodig
+                                if (activiteit.length > 32) {
+                                    activiteit = activiteit.substring(0, 32) + "...";
+                                }
+                                if (locatieNaam.length > 32) {
+                                    locatieNaam = locatieNaam.substring(0, 32) + "...";
+                                }
+
+                                document.getElementById('event-day').textContent = String(eventDate.getDate()).padStart(2, '0');
+                                var monthNames = ['jan', 'feb', 'mrt', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec'];
+                                document.getElementById('event-month').textContent = monthNames[eventDate.getMonth()];
+                                document.getElementById('event-title').textContent = activiteit;
+                                document.getElementById('event-time').textContent = row[2];
+
+                                var address = row[4];
+                                var locationLink = document.createElement('a');
+                                locationLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+                                locationLink.target = "_blank";
+                                locationLink.textContent = locatieNaam;
+                                document.getElementById('event-location').innerHTML = ''; // Leeg de huidige inhoud
+                                document.getElementById('event-location').appendChild(locationLink);
+
+                                break; // We hebben het eerste toekomstige evenement gevonden, we kunnen stoppen met zoeken
+                            }
+                        }
+                    }
+                }
+            };
+            xhr.send();
+        }
+
+        // Laad de gegevens zodra de pagina is geladen
+        document.addEventListener('DOMContentLoaded', fetchEventData);
+    </script>
+</body>
+</html>

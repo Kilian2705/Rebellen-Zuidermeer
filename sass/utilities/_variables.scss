@@ -1,0 +1,25 @@
+$primary-color: #4451A1;
+$secondary-color: #2D366C;
+$text-dark-color: #000000;
+$text-light-color: #F1F2F3;
+$sections-bg-color: #DBDEE1;
+$bg-color: #F2F3F4;
+$bg-decorations-color: #B7BDE1;
+$links-color: #394592;
+$light-border-color: #9099A2;
+$form-color: #E5E5E6;
+$placeholder-color: #97979B;
+$tertiary-text-color: #323234;
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 950px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}

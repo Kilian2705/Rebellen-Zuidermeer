@@ -1,0 +1,95 @@
+@import 'utilities/variables';
+
+#footerContainer {
+  width: 100%;
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  p {
+    color: $text-light-color;
+
+    // positioneer net zo ver rechts van logo als dat het logo rechts op de pagina staat
+    @include for-tablet-landscape-up {
+      margin-left: 5vw;
+    }
+    // positioneer op desktop 24px van logo
+    @include for-desktop-up {
+      margin-left: 24px;
+    }
+  }
+}
+
+#footerTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+
+  // minder margin wanneer logo niet meer absolute positioned is en de balk groter word
+  margin: 16px 0;
+
+  // grotere margin boven en onder wanneer logo absolute positioned is
+  @include for-desktop-up {
+    display: unset;
+    margin: 30px 0;
+  }
+
+  img {
+    position: unset;
+    height: 125px;
+    width: unset;
+    display: none;
+
+    @include for-desktop-up {
+      height: 165px;
+      width: 178px;
+      position: absolute;
+      top: -20px;
+    }
+
+    @include for-tablet-landscape-up {
+        display: block;
+    }
+  }
+}
+
+// veranderd of de footer tekst onder elkaar staat of naast elkaar
+.l-footer-text-layout {
+  flex-direction: column !important;
+  gap: 8px;
+
+  @include for-tablet-landscape-up {
+    flex-direction: unset !important;
+    gap: unset;
+  }
+
+  // positioneerd tekst naast het logo wanneer die absolute positioned is
+  > div:first-of-type {
+    @include for-desktop-up {
+      margin-left: 185px;
+    }
+  }
+}
+
+#footerBottom {
+  width: 100%;
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include for-phone-only {
+    display: none;
+  }
+
+  p {
+    font-family: TradeGothicNextLTPro-Rg;
+    font-weight: 400;
+    font-size: 17px;
+    color: $text-light-color;
+    padding: 25px
+  }
+}
