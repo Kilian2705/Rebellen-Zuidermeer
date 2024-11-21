@@ -5,16 +5,17 @@
     <title>Rebellen Zuidermeer</title>
     <link rel="stylesheet" type="text/css" href="sass/page.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div id="navContainer">
         <div id="navWrapper" class="l-page-width">
-            <a href="index.html">
+            <a href="index">
                 <img id="navLogo" src="assets/logo.png" alt="Ga naar Home pagina">
             </a>
             <div id="navItemsContainer">
-                <a class="u-toggle-size-nav__big-item" href="index.html">
+                <a class="u-toggle-size-nav__big-item" href="index">
                     <div class="c-big-nav-info-card">
                         <div class="u-horizontal-center-text">
                             <h2>Home</h2>
@@ -24,7 +25,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="u-toggle-size-nav__big-item" href="programma.html">
+                <a class="u-toggle-size-nav__big-item" href="programma">
                     <div class="c-big-nav-info-card">
                         <div class="u-horizontal-center-text">
                             <h2>Programma</h2>
@@ -34,7 +35,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="u-toggle-size-nav__big-item" href="over.html">
+                <a class="u-toggle-size-nav__big-item" href="over">
                     <div class="c-big-nav-info-card">
                         <div class="u-horizontal-center-text">
                             <h2>Over Ons</h2>
@@ -44,7 +45,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="u-toggle-size-nav__big-item" href="inschrijven.html">
+                <a class="u-toggle-size-nav__big-item" href="inschrijven">
                     <div class="c-big-nav-info-card">
                         <div class="u-horizontal-center-text">
                             <h2>Inschrijven</h2>
@@ -55,10 +56,10 @@
                     </div>
                 </a>
 
-                <a class="u-toggle-size-nav__small-item" href="index.html">HOME</a>
-                <a class="u-toggle-size-nav__small-item" href="programma.html">PROGRAMMA</a>
-                <a class="u-toggle-size-nav__small-item" href="over.html">OVER ONS</a>
-                <a class="u-toggle-size-nav__small-item" href="inschrijven.html">INSCHRIJVEN</a>
+                <a class="u-toggle-size-nav__small-item" href="index">HOME</a>
+                <a class="u-toggle-size-nav__small-item" href="programma">PROGRAMMA</a>
+                <a class="u-toggle-size-nav__small-item" href="over">OVER ONS</a>
+                <a class="u-toggle-size-nav__small-item" href="inschrijven">INSCHRIJVEN</a>
             </div>
             <div id="menuBtn">
                 <p>MENU</p>
@@ -76,7 +77,7 @@
             <h2>De inschrijving is ontvangen</h2>
             <p>Je ontvangt een bevestiging per e-mail.</p>
 
-            <a href="inschrijven.html" class="u-paragraph-margin--header c-button c-button--high">
+            <a href="inschrijven" class="u-paragraph-margin--header c-button c-button--high">
                 <p>Nog een inschrijving</p>
             </a>
         </div>
@@ -84,7 +85,7 @@
         <div class="l-page-width l-centered-page js-hide-on-submit">
             <h1>Inschrijven</h1>
             <p>Schrijf je in voor de rebellenclub</p>
-            <a href="over.html#inschrijvingen"><p class="p--secondary u-paragraph-margin--secondary">Meer informatie</p></a>
+            <a href="over#inschrijvingen"><p class="p--secondary u-paragraph-margin--secondary">Meer informatie</p></a>
         </div>
         <div class="l-page-width l-centered-page c-form-container js-hide-on-submit">
             <form id="registration-form">
@@ -608,7 +609,7 @@
 
                 formData = JSON.stringify(formData);
 
-                fetch('https://script.google.com/macros/s/AKfycbxx8H-woyKZBBsVvRokLYBs_Auo1_RyJgMqMUWU17VcidPi9T97CTDlaJo7shAOcmuV/exec', { // Vervang <YOUR_WEB_APP_URL> met je Google Apps Script web app URL
+                fetch('https://script.google.com/macros/s/AKfycbwMCnzk9rUDOnCojSFghchPciK4eqb67sTdcQ2z2knXDkjDYYL25Z4VU_adJwJ4Ij0A/exec', { // Vervang <YOUR_WEB_APP_URL> met je Google Apps Script web app URL
                     method: 'POST',
                     mode: 'no-cors',
                     body: formData

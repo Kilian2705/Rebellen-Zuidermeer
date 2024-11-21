@@ -5,16 +5,17 @@
     <title>Rebellen Zuidermeer</title>
     <link rel="stylesheet" type="text/css" href="sass/page.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/logo.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div id="navContainer">
         <div id="navWrapper" class="l-page-width">
-            <a href="index.html">
+            <a href="index">
                 <img id="navLogo" src="assets/logo.png" alt="Ga naar Home pagina">
             </a>
             <div id="navItemsContainer">
-                <a class="u-toggle-size-nav__big-item" href="index.html">
+                <a class="u-toggle-size-nav__big-item" href="index">
                     <div class="c-big-nav-info-card">
                         <div class="u-horizontal-center-text">
                             <h2>Home</h2>
@@ -24,7 +25,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="u-toggle-size-nav__big-item" href="programma.html">
+                <a class="u-toggle-size-nav__big-item" href="programma">
                     <div class="c-big-nav-info-card">
                         <div class="u-horizontal-center-text">
                             <h2>Programma</h2>
@@ -34,7 +35,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="u-toggle-size-nav__big-item" href="over.html">
+                <a class="u-toggle-size-nav__big-item" href="over">
                     <div class="c-big-nav-info-card">
                         <div class="u-horizontal-center-text">
                             <h2>Over ons</h2>
@@ -44,7 +45,7 @@
                         </div>
                     </div>
                 </a>
-                <a class="u-toggle-size-nav__big-item" href="inschrijven.html">
+                <a class="u-toggle-size-nav__big-item" href="inschrijven">
                     <div class="c-big-nav-info-card">
                         <div class="u-horizontal-center-text">
                             <h2>Inschrijven</h2>
@@ -55,10 +56,10 @@
                     </div>
                 </a>
 
-                <a class="u-toggle-size-nav__small-item" href="index.html">HOME</a>
-                <a class="u-toggle-size-nav__small-item" href="programma.html">PROGRAMMA</a>
-                <a class="u-toggle-size-nav__small-item" href="over.html">OVER ONS</a>
-                <a class="u-toggle-size-nav__small-item" href="inschrijven.html">INSCHRIJVEN</a>
+                <a class="u-toggle-size-nav__small-item" href="index">HOME</a>
+                <a class="u-toggle-size-nav__small-item" href="programma">PROGRAMMA</a>
+                <a class="u-toggle-size-nav__small-item" href="over">OVER ONS</a>
+                <a class="u-toggle-size-nav__small-item" href="inschrijven">INSCHRIJVEN</a>
             </div>
             <div id="menuBtn">
                 <p>MENU</p>
@@ -211,7 +212,7 @@
                     // Controleer of er geen items zijn toegevoegd
                     if (count === 0) {
                         document.getElementById('programma-titel').classList.add('is-hidden')
-                        programItemsContainer.innerHTML = '<p>Er staan momenteel geen activiteiten op het programma.</p><p>Probeer het later opnieuw of schrijf je in voor de nieuwsbrief.</p><a href="inschrijven.html"><div class="c-button c-button--high u-extra-section-spacing"><p>Inschrijven</p></div></a>';
+                        programItemsContainer.innerHTML = '<p>Er staan momenteel geen activiteiten op het programma.</p><p>Probeer het later opnieuw of schrijf je in voor de nieuwsbrief.</p><a href="inschrijven"><div class="c-button c-button--high u-extra-section-spacing"><p>Inschrijven</p></div></a>';
                     }
 
 
